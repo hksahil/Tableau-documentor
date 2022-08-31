@@ -15,6 +15,7 @@ hide_st_style = """
             #MainMenu {visibility: hidden;}
             footer {visibility: hidden;}
             header {visibility: hidden;}
+            a {text-decoration: none;}
             </style>
             """
 st.markdown(hide_st_style, unsafe_allow_html=True)
@@ -33,7 +34,8 @@ def to_excel(df):
     return processed_data
 
 st.header('Tableau Documentation Made Easy !!')
-st.info('Saves your documentation time upto 99%')
+st.info('It takes atleast 2 minute to open a Tableau File and copy one calculation from Tableau to Excel.  \nIf you have even 10 calulations, that will take 10*2=20 minutes minimum.')
+st.success('You can do that in seconds using this website!!')
 st.markdown("---")
 st.subheader('Upload your TWB file')
 uploaded_file=st.file_uploader('',type=['twb'],)
@@ -83,4 +85,4 @@ if uploaded_file is not None:
     else:
         st.download_button("Download",to_excel(df),file_name="Documentation-excel-output")
 st.markdown('---')
-st.markdown('Made with :heart: by Sahil')
+st.markdown('Made with :heart: by [Sahil Choudhary](https://www.sahilchoudhary.ml/)')
